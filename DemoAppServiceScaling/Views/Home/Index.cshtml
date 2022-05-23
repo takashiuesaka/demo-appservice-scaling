@@ -1,0 +1,19 @@
+﻿@model System.Collections.Generic.List<RequestSummary>
+@{
+    ViewData["Title"] = "List of AppService Machine Name";
+}
+
+<div>
+    <h1 class="display-4">List of AppService Machine Name</h1>
+    <div><a href="/applyload">Apply Load</a></div>
+    <div><a href="/deleteallresults">Delete all results</a></div>
+    @{
+        if (Model != null)
+        {
+            foreach (var requestSummary in Model)
+            {
+                <div>MachineName: @requestSummary.MachineName, Count: @requestSummary.Count</div>
+            }
+        }
+    }
+</div>
